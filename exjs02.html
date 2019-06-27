@@ -129,11 +129,17 @@
         //    - '더하면' 버튼을 클릭할 때마다, input 에 입력되어 있는 수를 현재 총합 값에 더해서 새로운 총합 값으로 출력
         //    - '초기화' 버튼 클릭시, 총합 값을 다시 0으로 출력
         //    - 숫자가 아닌 값을 입력한 경우, 총합에 더하지 않고 "숫자가 아닌 것을 입력했다"는 경고 메시지를 출력(alert)하고, input 엘리먼트를 초기화
-        
+        var numIn = document.querySelector('#num');
+        var addBtn = document.querySelector('#addBtn');
+        var totalIn = document.querySelector('#total');
+        var resetIn = document.querySelector('#reset');
+
+        totalIn.value = 0;
+        // console.log(totalIn.disabled);
+        totalIn.disabled = true;
 
 
 
-        
         // 5.구구단을 테이블 형태로 출력
         //  select 에서 단 수를 선택하고, 구구단 출력 버튼을 클릭하면, 선택한 단까지 구구단을 테이블로 생성하여 id가 out인 div 안에 출력
         //  구구단 테이블 모양은 아래 이미지를 참고하여 2가지 형태로 출력
