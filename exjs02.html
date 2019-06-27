@@ -132,12 +132,24 @@
         var numIn = document.querySelector('#num');
         var addBtn = document.querySelector('#addBtn');
         var totalIn = document.querySelector('#total');
-        var resetIn = document.querySelector('#reset');
+        var resetBIn = document.querySelector('#reset');
 
         totalIn.value = 0;
         // console.log(totalIn.disabled);
         totalIn.disabled = true;
 
+        addBtn.onclick = function() {
+            // 입력값이 없는 경우
+            var n = Number(numIn.value);
+            // 숫자가 아닌 값을 입력한 경우 (n 변수 값이 NaN인 경우)
+            // NaN은 비교연산자로 비교할 수 없고, isNaN() 함수로 확인 가능
+            var total = Number(totalIn.value);
+            total = total + n;  // total += n;
+            totalIn.value = total;
+        };
+        resetBIn.onclick = function() {
+            totalIn.value = 0;
+        };
 
 
         // 5.구구단을 테이블 형태로 출력
